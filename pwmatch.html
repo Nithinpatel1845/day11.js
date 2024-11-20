@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Password Matcher</h2>
+    <input type="password" id="password1" placeholder="Enter your password">
+    <input type="password" id="password2" placeholder="Confirm your password" oninput="matchPasswords()">
+    <div id="message"></div>
+
+    <script>
+        function matchPasswords() {
+            let password1 = document.getElementById("password1").value;
+            let password2 = document.getElementById("password2").value;
+            let message = document.getElementById("message");
+            if (password1 === password2) {
+                message.textContent = "Passwords match!";
+                message.style.color = "green";
+            } else if (password2 === "") {
+                message.textContent = "";
+            } else {
+                message.textContent = "Passwords do not match.";
+                message.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
